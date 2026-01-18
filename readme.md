@@ -36,6 +36,22 @@ Inside the configuration screen, you can
 
 ![Setting Window](/docs/images/setting_window.png)
 
+### Headless
+
+I've modified this to run headless. Below is a bit of code to create the config file prior to running the program.
+
+```
+mkdir -p ~/.config/RemoteVolume
+cat > ~/.config/RemoteVolume/config.json << 'EOF'
+{
+  "port": 8080,
+  "pollingEnabled": true,
+  "pollingInterval": 500,
+  "autostart": false
+}
+EOF
+```
+
 ## Usage
 
 When using [Bitfocus Companion](https://bitfocus.io/companion) you don't need the following information - this is only for people, who would like to integrate the application in another project.
@@ -134,6 +150,13 @@ When using [Bitfocus Companion](https://bitfocus.io/companion) you don't need th
   	"action": "isMuted"
   }
   ```
+
+## Build Script
+
+I left a build script for compiling it on a x86 linux system.
+
+* build.sh - installs some dependencies.
+* modify-code.sh - modified the original code.
 
 ## Credits
 
